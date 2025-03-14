@@ -1,28 +1,11 @@
-//call back version
-// const submitForm = function (callback) {
-//   const submit = document.querySelector("#submit");
+//use callbacks in this case as once a promise settles/resolves/gets rejected once, it stays settled and therefore cannot be used again.
+const submitForm = function (callback) {
+  const submit = document.querySelector("#submit");
 
-//   submit.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     const formValue = document.querySelector("#location").value;
-//     callback(formValue);
-//   });
-// };
-
-//promises version
-const submitForm = function () {
-  return new Promise((resolve, reject) => {
-    const submit = document.querySelector("#submit");
-
-    submit.addEventListener("click", (e) => {
-      e.preventDefault();
-      const formValue = document.querySelector("#location").value;
-      if (formValue) {
-        resolve(formValue);
-      } else {
-        reject("Location not found");
-      }
-    });
+  submit.addEventListener("click", (e) => {
+    e.preventDefault();
+    const formValue = document.querySelector("#location").value;
+    callback(formValue);
   });
 };
 

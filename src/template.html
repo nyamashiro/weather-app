@@ -4,14 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Weather App</title>
+    <link rel="stylesheet" href="./modules/style.css" />
   </head>
   <body>
-    <form action="#">
-      <label for="location"
-        >Enter a location:
-        <input type="text" id="location" name="location" />
+    <h1>My Weather App</h1>
+    <div class="form">
+      <form action="#">
+        <label for="location"
+          >Enter a location:
+          <input type="text" id="location" name="location" />
+        </label>
+        <button type="submit" id="submit">Submit</button>
+      </form>
+    </div>
+    <div class="conversion">
+      <p>Celsius</p>
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="slider round"></span>
       </label>
-      <button type="submit" id="submit">Submit</button>
-    </form>
+      <p>Fahrenheit</p>
+    </div>
+    <div class="display">
+      <h2 class="location"></h2>
+      <h2 class="content temperature"></h2>
+      <h2 class="content condition"></h2>
+    </div>
   </body>
 </html>

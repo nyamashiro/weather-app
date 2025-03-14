@@ -1,10 +1,6 @@
-import { getWeather, convertCtoF, convertFtoC } from "./modules/weather";
+import { getWeatherData, convertCtoF, convertFtoC } from "./modules/weather";
 import { submitForm } from "./modules/form";
-
-//using promises
-submitForm().then((location) => {
-  getWeather(location);
-});
+import "./modules/style.css";
 
 //using callbacks
-// submitForm(getWeather);
+submitForm(getWeatherData);
