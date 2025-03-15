@@ -25,6 +25,16 @@ h1 {
   gap: 10px;
 }
 
+.form,
+input,
+button {
+  font-size: 1.5rem;
+}
+
+button {
+  padding: 3px 6px;
+}
+
 .location {
   margin-top: 20px;
 }
