@@ -43,6 +43,8 @@ async function setWeatherIcon(icon) {
     weatherIcon = await import("../assets/clear-day.svg");
   } else if (icon === "clear-night") {
     weatherIcon = await import("../assets/clear-night.svg");
+  } else if (icon === "none") {
+    weatherIcon = await import("../assets/sad.svg");
   }
   //import() stores the data in the default key inside its object
   return weatherIcon.default;

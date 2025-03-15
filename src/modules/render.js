@@ -44,10 +44,11 @@ const renderWeatherItems = (function () {
   const clearDisplay = function () {
     const location = document.querySelector(".location");
     const clear = document.querySelectorAll(".content");
+    const icon = document.querySelector(".icon");
     clear.forEach((item) => {
       item.textContent = "";
     });
-
+    icon.src = setWeatherIcon("none").then((response) => (icon.src = response));
     location.textContent = "Location not found";
   };
 
