@@ -16,6 +16,36 @@ h1 {
   padding: 20px;
 }
 
+.display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px black solid;
+  min-width: 800px;
+  gap: 10px;
+}
+
+.location {
+  margin-top: 20px;
+}
+
+.condition {
+  margin-bottom: 20px;
+}
+
+.icon {
+  max-width: 200px;
+  height: auto;
+}
+
+.content {
+  font-size: 2rem;
+}
+
+.temperature {
+  font-size: 3rem;
+}
+
 .conversion {
   display: flex;
   align-items: center;
