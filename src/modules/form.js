@@ -4,7 +4,7 @@ const submitForm = function (callback) {
 
   submit.addEventListener("click", (e) => {
     e.preventDefault();
-    const formValue = document.querySelector("#location").value;
+    const formValue = document.querySelector("#search").value;
     callback(formValue);
   });
 };

@@ -10,9 +10,9 @@
     <h1>My Weather App</h1>
     <div class="form">
       <form action="#">
-        <label for="location"
+        <label for="search"
           >Enter a location:
-          <input type="text" id="location" name="location" />
+          <input type="text" id="search" name="location" />
         </label>
         <button type="submit" id="submit">Submit</button>
       </form>
@@ -20,15 +20,15 @@
     <div class="conversion">
       <p>Celsius</p>
       <label class="switch">
-        <input type="checkbox" />
+        <input type="checkbox" class="unit-toggle" />
         <span class="slider round"></span>
       </label>
       <p>Fahrenheit</p>
     </div>
     <div class="display">
-      <h2 class="location"></h2>
-      <h2 class="content temperature"></h2>
-      <h2 class="content condition"></h2>
+      <h2 class="content location"></h2>
+      <h2 class="clear content temperature"></h2>
+      <h2 class="clear content condition"></h2>
     </div>
   </body>
 </html>

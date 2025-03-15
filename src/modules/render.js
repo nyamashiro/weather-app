@@ -1,42 +1,37 @@
 const renderWeatherItems = (function () {
-  const renderLocation = function (weatherObject) {
-    const locationDiv = document.querySelector(".location");
-    const locationData = weatherObject.location;
+  const renderDisplay = function (weatherObject) {
+    const slider = document.querySelector(".unit-toggle");
+    const content = document.querySelectorAll(".content");
+    const weatherData = [
+      weatherObject.location,
+      [weatherObject.tempInF, weatherObject.tempInC],
+      weatherObject.condition,
+    ];
 
-    locationDiv.textContent = locationData;
-  };
-
-  const renderTemperature = function (weatherObject) {
-    const temperatureDiv = document.querySelector(".temperature");
-    const temperatureData = `${weatherObject.tempInF} \u00B0F`;
-
-    temperatureDiv.textContent = temperatureData;
-  };
-
-  const renderCondition = function (weatherObject) {
-    const conditionDiv = document.querySelector(".condition");
-    const conditionData = weatherObject.condition;
-
-    conditionDiv.textContent = conditionData;
-  };
-
-  const renderAll = function (weatherObject) {
-    renderLocation(weatherObject);
-    renderTemperature(weatherObject);
-    renderCondition(weatherObject);
+    content.forEach((item, i) => {
+      if (item.classList.contains("temperature")) {
+        if (slider.checked === true) {
+          item.textContent = `${weatherData[i][0]} \u00B0F`;
+        } else {
+          item.textContent = `${weatherData[i][1]} \u00B0C`;
+        }
+      } else {
+        item.textContent = weatherData[i];
+      }
+    });
   };
 
   const clearDisplay = function () {
     const location = document.querySelector(".location");
-    const content = document.querySelectorAll(".content");
-    content.forEach((item) => {
+    const clear = document.querySelectorAll(".content");
+    clear.forEach((item) => {
       item.textContent = "";
     });
 
     location.textContent = "Location not found";
   };
 
-  return { renderAll, clearDisplay };
+  return { renderDisplay, clearDisplay };
 })();
 
 export { renderWeatherItems };
